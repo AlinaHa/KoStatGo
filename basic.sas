@@ -22,3 +22,10 @@ PROC MEANS DATA=sashelp.cars;
 	CLASS Origin;
 	OUTPUT OUT=kostat.mean_cars MEAN=avg MEDIAN=med STD=sd;  /* OUTPUT OUT = 새데이터명 MEAN = 새데이터셋에서의 새변수명 */
 RUN;
+
+/* proc univariate */
+
+PROC UNIVARIATE DATA = sashelp.class;
+	VAR height;
+	HISTOGRAM height /NORMAL;
+RUN;
