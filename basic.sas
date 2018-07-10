@@ -66,9 +66,3 @@ run;
 data kostat.s_cars;
 	set kostat.cars3 kostat.cars4;
 run;
-
-/* glm */ 
-
-proc glm data=hw5_1;
-	model p08bb002=sex /solution;
-run;
