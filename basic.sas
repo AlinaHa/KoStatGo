@@ -61,3 +61,8 @@ data kostat.m_cars;
 	by make model;
 run;
 
+/* set */
+
+data kostat.s_cars;
+	set kostat.cars3 kostat.cars4;
+run;
