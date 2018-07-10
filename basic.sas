@@ -30,34 +30,9 @@ PROC UNIVARIATE DATA = sashelp.class;
 	HISTOGRAM height /NORMAL;
 RUN;
 
-/* proc tabulate */
 
-  ods trace on;
+/* glm */ 
 
- proc tabulate data=sashelp.cars;
- 	class origin;
-	var mpg_city;
-	table origin, mpg_city * (mean std);
-	ods output table = work.new;
+proc glm data=hw5_1;
+	model p08bb002=sex /solution;
 run;
-
-/* keep */
-
-data q2;
-set q;
-keep sex p08aa017-p08aa023 p08bb002 p08ed001;
-run;
-
-/* sort */
-
-proc sort data=policy;
-by id;
-run;
-
-/* merge */
-
-data kostat.m_cars;
-	merge kostat.cars1 kostat.cars2;	
-	by make model;
-run;
-
