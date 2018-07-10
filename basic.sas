@@ -29,7 +29,6 @@ PROC UNIVARIATE DATA = sashelp.class;
 	VAR height;
 	HISTOGRAM height /NORMAL;
 RUN;
-<<<<<<< HEAD
 
 /* proc tabulate */
 
@@ -67,5 +66,9 @@ run;
 data kostat.s_cars;
 	set kostat.cars3 kostat.cars4;
 run;
-=======
->>>>>>> parent of 35fca54... basic
+
+/* glm */ 
+
+proc glm data=hw5_1;
+	model p08bb002=sex /solution;
+run;
